@@ -1,0 +1,2 @@
+- Scrollbar
+- Two tabs, one for stdout, another for stderr
