@@ -2,27 +2,40 @@
 
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.text.Font?>
 
 <SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.awvalenti.nexo.mvc.controller.Controller">
    <items>
-      <TextArea fx:id="txtSourceCode" onKeyTyped="#codeTyped" prefHeight="200.0" prefWidth="200.0" wrapText="true">
-         <font>
-            <Font name="Consolas Bold" size="16.0" />
-         </font>
-      </TextArea>
+      <TitledPane alignment="CENTER" animated="false" focusTraversable="false" text="Source code">
+         <content>
+            <TextArea fx:id="txtSourceCode" onKeyTyped="#codeTyped" prefHeight="200.0" prefWidth="200.0" wrapText="true">
+               <font>
+                  <Font name="Consolas" size="16.0" />
+               </font>
+            </TextArea>
+         </content>
+      </TitledPane>
       <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
          <items>
-            <TextArea fx:id="txtStdout" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true">
-               <font>
-                  <Font name="Consolas Bold" size="16.0" />
-               </font>
-            </TextArea>
-            <TextArea fx:id="txtStderr" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: red;" wrapText="true">
-               <font>
-                  <Font name="Consolas Bold" size="16.0" />
-               </font>
-            </TextArea>
+            <TitledPane alignment="CENTER" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Standard output">
+               <content>
+                  <TextArea fx:id="txtStdout" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: blue;" wrapText="true">
+                     <font>
+                        <Font name="Consolas Bold" size="16.0" />
+                     </font>
+                  </TextArea>
+               </content>
+            </TitledPane>
+            <TitledPane alignment="CENTER" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Error output">
+               <content>
+                  <TextArea fx:id="txtStderr" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-text-fill: red;" wrapText="true">
+                     <font>
+                        <Font name="Consolas Bold" size="16.0" />
+                     </font>
+                  </TextArea>
+               </content>
+            </TitledPane>
          </items>
       </SplitPane>
    </items>
