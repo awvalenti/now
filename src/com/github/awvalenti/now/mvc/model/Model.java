@@ -1,4 +1,4 @@
-package com.github.awvalenti.nexo.mvc.model;
+package com.github.awvalenti.now.mvc.model;
 
 import java.io.File;
 import java.io.IOException;

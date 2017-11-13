@@ -1,9 +1,9 @@
-package com.github.awvalenti.nexo.main;
+package com.github.awvalenti.now.main;
 
 import java.nio.charset.Charset;
 
-import com.github.awvalenti.nexo.mvc.controller.Controller;
-import com.github.awvalenti.nexo.mvc.model.factory.ModelFactory;
+import com.github.awvalenti.now.mvc.controller.Controller;
+import com.github.awvalenti.now.mvc.model.factory.ModelFactory;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,14 +22,14 @@ public class App extends Application {
 		FXMLLoader loader = new FXMLLoader(Charset.forName("US-ASCII"));
 
 		Parent root = loader.load(getClass().getResourceAsStream(
-				"/com/github/awvalenti/nexo/mvc/view/View.fxml"));
+				"/com/github/awvalenti/now/mvc/view/View.fxml"));
 
 		Controller controller = loader.getController();
 		controller.setModel(ModelFactory.tcc(controller,
 				"C:\\desenvolvimento\\ferramentas\\c\\tcc\\win32"));
 
 		primaryStage.setScene(new Scene(root));
-		primaryStage.setTitle("Nexo");
+		primaryStage.setTitle("Now");
 		primaryStage.show();
 	}
 

@@ -1,10 +1,10 @@
-package com.github.awvalenti.nexo.mvc.model.factory;
+package com.github.awvalenti.now.mvc.model.factory;
 
 import java.io.File;
 import java.nio.charset.Charset;
 
-import com.github.awvalenti.nexo.mvc.model.Model;
-import com.github.awvalenti.nexo.mvc.model.Observer;
+import com.github.awvalenti.now.mvc.model.Model;
+import com.github.awvalenti.now.mvc.model.Observer;
 
 public class ModelFactory {
 

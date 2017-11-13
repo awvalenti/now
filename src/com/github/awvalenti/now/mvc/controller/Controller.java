@@ -1,7 +1,7 @@
-package com.github.awvalenti.nexo.mvc.controller;
+package com.github.awvalenti.now.mvc.controller;
 
-import com.github.awvalenti.nexo.mvc.model.Model;
-import com.github.awvalenti.nexo.mvc.model.Observer;
+import com.github.awvalenti.now.mvc.model.Model;
+import com.github.awvalenti.now.mvc.model.Observer;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
