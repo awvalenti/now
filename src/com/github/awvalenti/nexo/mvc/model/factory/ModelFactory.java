@@ -11,7 +11,7 @@ public class ModelFactory {
 	public static Model tcc(Observer observer,
 			String tccDirectory) {
 		return new Model(new File(tccDirectory), "tcc -run -",
-				Charset.forName("US-ASCII"), observer);
+				Charset.forName("UTF-8"), observer);
 	}
 
 }
