@@ -9,9 +9,12 @@ import javafx.scene.control.TextArea;
 
 public class Controller implements Observer {
 
-	@FXML private TextArea txtSourceCode;
-	@FXML private TextArea txtStdout;
-	@FXML private TextArea txtStderr;
+	@FXML
+	private TextArea txtSourceCode;
+	@FXML
+	private TextArea txtStdout;
+	@FXML
+	private TextArea txtStderr;
 
 	private Model model;
 
@@ -21,9 +24,10 @@ public class Controller implements Observer {
 
 	@FXML
 	private void codeTyped() {
-		Platform.runLater(() -> new Thread(() -> model.run(txtSourceCode.getText())).start());
+		Platform.runLater(() -> {
+			new Thread(() -> model.run(txtSourceCode.getText())).start();
+		});
 	}
-
 
 	@Override
 	public void outputProduced(String stdout, String stderr) {
