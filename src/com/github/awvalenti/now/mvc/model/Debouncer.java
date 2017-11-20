@@ -28,19 +28,9 @@ public class Debouncer {
 		currentTask.cancel();
 
 		currentTask = new TimerTask() {
-			private volatile boolean cancelled;
-
-			@Override
-			public boolean cancel() {
-				cancelled = true;
-				return super.cancel();
-			}
-
 			@Override
 			public void run() {
-				synchronized (Debouncer.this) {
-					if (!cancelled) newTask.run();
-				}
+				newTask.run();
 			}
 		};
 
