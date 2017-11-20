@@ -25,7 +25,7 @@ public class App extends Application {
 				"/com/github/awvalenti/now/mvc/view/View.fxml"));
 
 		Controller controller = loader.getController();
-		controller.setModel(ModelFactory.tcc(controller,
+		controller.setModel(ModelFactory.forTcc(controller,
 				"C:\\desenvolvimento\\ferramentas\\c\\tcc\\win32"));
 
 		stage.setScene(new Scene(root));
