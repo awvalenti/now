@@ -1,6 +1,5 @@
 package com.github.awvalenti.now.mvc.model;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -8,16 +7,14 @@ import java.nio.charset.Charset;
 
 public class Model {
 
-	private final File interpreterDirectory;
 	private final String interpreterCommand;
 	private final Charset sourceCodeCharset;
 	private final Observer observer;
 
 	private String lastSourceCode = "";
 
-	public Model(File interpreterDirectory, String interpreterCommand,
-			Charset sourceCodeCharset, Observer observer) {
-		this.interpreterDirectory = interpreterDirectory;
+	public Model(String interpreterCommand, Charset sourceCodeCharset,
+			Observer observer) {
 		this.interpreterCommand = interpreterCommand;
 		this.sourceCodeCharset = sourceCodeCharset;
 		this.observer = observer;
@@ -29,8 +26,7 @@ public class Model {
 		lastSourceCode = sourceCode;
 
 		try {
-			Process proc = Runtime.getRuntime().exec(interpreterCommand, null,
-					interpreterDirectory);
+			Process proc = Runtime.getRuntime().exec(interpreterCommand);
 
 			try (OutputStream outputStream = proc.getOutputStream()) {
 				outputStream.write(sourceCode.getBytes(sourceCodeCharset));

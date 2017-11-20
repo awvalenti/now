@@ -1,6 +1,5 @@
 package com.github.awvalenti.now.mvc.model.factory;
 
-import java.io.File;
 import java.nio.charset.Charset;
 
 import com.github.awvalenti.now.mvc.model.Model;
@@ -10,8 +9,8 @@ public class ModelFactory {
 
 	public static Model tcc(Observer observer,
 			String tccDirectory) {
-		return new Model(new File(tccDirectory), "tcc -run -",
-				Charset.forName("UTF-8"), observer);
+		return new Model(tccDirectory + "\\tcc -run -", Charset.forName("UTF-8"),
+				observer);
 	}
 
 }
