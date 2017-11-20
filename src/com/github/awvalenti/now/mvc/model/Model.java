@@ -28,8 +28,8 @@ public class Model {
 		try {
 			Process proc = Runtime.getRuntime().exec(interpreterCommand);
 
-			try (OutputStream outputStream = proc.getOutputStream()) {
-				outputStream.write(sourceCode.getBytes(sourceCodeCharset));
+			try (OutputStream stdin = proc.getOutputStream()) {
+				stdin.write(sourceCode.getBytes(sourceCodeCharset));
 			}
 
 			byte[] buffer = new byte[32768];
