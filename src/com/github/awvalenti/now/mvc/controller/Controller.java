@@ -25,7 +25,7 @@ public class Controller implements Observer {
 	@FXML
 	private void codeTyped() {
 		Platform.runLater(() -> {
-			new Thread(() -> model.run(txtSourceCode.getText())).start();
+			model.run(txtSourceCode.getText());
 		});
 	}
 

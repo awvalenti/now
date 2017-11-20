@@ -10,37 +10,35 @@ public class Model {
 	private final String interpreterCommand;
 	private final Charset sourceCodeCharset;
 	private final Observer observer;
-
-	private String lastSourceCode = "";
+	private final Debouncer debouncer;
 
 	public Model(String interpreterCommand, Charset sourceCodeCharset,
-			Observer observer) {
+			Observer observer, Debouncer debouncer) {
 		this.interpreterCommand = interpreterCommand;
 		this.sourceCodeCharset = sourceCodeCharset;
 		this.observer = observer;
+		this.debouncer = debouncer;
 	}
 
 	public void run(String sourceCode) {
-		if (sourceCode.equals(lastSourceCode)) return;
+		debouncer.run(() -> {
+			try {
+				Process proc = Runtime.getRuntime().exec(interpreterCommand);
 
-		lastSourceCode = sourceCode;
+				try (OutputStream stdin = proc.getOutputStream()) {
+					stdin.write(sourceCode.getBytes(sourceCodeCharset));
+				}
 
-		try {
-			Process proc = Runtime.getRuntime().exec(interpreterCommand);
+				byte[] buffer = new byte[32768];
+				String stdout = readStream(buffer, proc.getInputStream());
+				String stderr = readStream(buffer, proc.getErrorStream());
 
-			try (OutputStream stdin = proc.getOutputStream()) {
-				stdin.write(sourceCode.getBytes(sourceCodeCharset));
+				observer.outputProduced(stdout, stderr);
+
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-
-			byte[] buffer = new byte[32768];
-			String stdout = readStream(buffer, proc.getInputStream());
-			String stderr = readStream(buffer, proc.getErrorStream());
-
-			observer.outputProduced(stdout, stderr);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		});
 	}
 
 	private String readStream(byte[] buffer, InputStream inputStream)
