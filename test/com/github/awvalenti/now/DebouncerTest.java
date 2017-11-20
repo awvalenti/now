@@ -1,4 +1,4 @@
-package now;
+package com.github.awvalenti.now;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
