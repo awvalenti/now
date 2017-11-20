@@ -18,7 +18,7 @@ public class App extends Application {
 	}
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage stage) throws Exception {
 		FXMLLoader loader = new FXMLLoader(Charset.forName("US-ASCII"));
 
 		Parent root = loader.load(getClass().getResourceAsStream(
@@ -28,9 +28,9 @@ public class App extends Application {
 		controller.setModel(ModelFactory.tcc(controller,
 				"C:\\desenvolvimento\\ferramentas\\c\\tcc\\win32"));
 
-		primaryStage.setScene(new Scene(root));
-		primaryStage.setTitle("Now");
-		primaryStage.show();
+		stage.setScene(new Scene(root));
+		stage.setTitle("Now");
+		stage.show();
 	}
 
 }
