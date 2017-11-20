@@ -2,9 +2,9 @@ package com.github.awvalenti.now.mvc.model.factory;
 
 import java.nio.charset.Charset;
 
-import com.github.awvalenti.now.mvc.model.Debouncer;
 import com.github.awvalenti.now.mvc.model.Model;
 import com.github.awvalenti.now.mvc.model.Observer;
+import com.github.awvalenti.now.util.Debouncer;
 
 public class ModelFactory {
 

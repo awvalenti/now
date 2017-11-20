@@ -1,4 +1,4 @@
-package com.github.awvalenti.now.mvc.model;
+package com.github.awvalenti.now.util;
 
 import java.util.Timer;
 import java.util.TimerTask;

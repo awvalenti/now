@@ -1,4 +1,4 @@
-package com.github.awvalenti.now;
+package com.github.awvalenti.now.util;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.awvalenti.now.mvc.model.Debouncer;
+import com.github.awvalenti.now.util.Debouncer;
 
 /**
  * This test makes use of Thread.sleep and tests a class that uses Timer.

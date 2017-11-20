@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 
+import com.github.awvalenti.now.util.Debouncer;
+
 public class Model {
 
 	private final String interpreterCommand;
