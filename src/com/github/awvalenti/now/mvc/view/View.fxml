@@ -9,7 +9,7 @@
    <items>
       <TitledPane alignment="CENTER" animated="false" focusTraversable="false" text="Source code" SplitPane.resizableWithParent="false">
          <content>
-            <TextArea fx:id="txtSourceCode" onKeyTyped="#codeTyped" prefHeight="468.0" wrapText="true">
+            <TextArea fx:id="txtSourceCode" onKeyTyped="#codeTyped" prefHeight="468.0" wrapText="true" text=''>
                <font>
                   <Font name="Consolas" size="16.0" />
                </font>

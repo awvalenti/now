@@ -6,8 +6,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.awvalenti.now.util.Debouncer;
-
 /**
  * This test makes use of Thread.sleep and tests a class that uses Timer.
  * This is not a best practice, but has helped designing the class. And mocking
